@@ -1,42 +1,15 @@
-let S = {};
-S.ugrace = [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24];
-/*for (var i = 0; i < 25; i++) {
-  S.ugrace[i] = 1;
-}*/
-let player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0.6}};
+var S = {};
+//S.ugrace = [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24];
+S.ugrace = [];
+for (var i = 0; i < 25; i++) {
+  S.ugrace[i] = 0;
+}
+var player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};
+//let player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0.6}};
+//let player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};
 let high = false;
 
 let new_level = 8;
-
-/*{
-    "type":"weapon",
-    "wtype":"pmace",
-    "tier":2,
-    "skin":"pmace",
-    "class":["priest"],
-    "int":8,
-    "dex":4,
-    "damage_type":"magical",
-    "upgrade":{
-      "int":2,
-      "dex":1,
-    },
-    "name":"Priest's Mace",
-    "g":89000,
-    "a":true,
-    "grades":[0,8],
-  }*/
-/*
-let item_def = { // "helmet"
-                 "tier":1,
-                 "type":"helmet",
-                 "skin":"helmet",
-                 "scroll":true,
-                 "upgrade":{
-                 },
-                 "name":"Helmet",
-                 "g":3200,
-               }*/
 
 let offering = false;
 
@@ -125,14 +98,23 @@ function run_numbers(item_id) {
   let output = "";
   let total_odds = 1;
   let item_value = parseInt(document.getElementById("item_value").value);
+  let total_value = item_value;
+  player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};
+  if (document.getElementById("lucky_check").checked) {
+    //player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0}};
+    player = {p: {ugrace: [0, 0, 0, 0, 1, 1, 2, 7, 23, 24, 24, 24, 24, 24, 24], ograce: 0}};
+  }
+  S.ugrace = player.p.ugrace;
   for (let i = 1; i <= 12; i++) {
     let probability = get_probability(item, item_def, i);
     total_odds *= probability;
-    item_value += get_upgrade_scroll_value(item, i-1);
+    //item_value += get_upgrade_scroll_value(item, i-1);
+    total_value += get_upgrade_scroll_value(item, i-1);
+    total_value /= probability;
     if (i < 10) {
-      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(item_value/total_odds).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
+      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
     } else {
-      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(item_value/total_odds).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(6)}%)<br>`;
+      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(6)}%)<br>`;
     }
   }
   document.getElementById("output").innerHTML = output;
