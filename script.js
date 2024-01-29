@@ -100,11 +100,13 @@ function run_numbers(item_id) {
   let item_value = parseInt(document.getElementById("item_value").value);
   let total_value = item_value;
   player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};
+  S.ugrace = player.p.ugrace;
   if (document.getElementById("lucky_check").checked) {
     //player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0}};
-    player = {p: {ugrace: [0, 0, 0, 0, 1, 1, 2, 7, 23, 24, 24, 24, 24, 24, 24], ograce: 0}};
+    S.ugrace = [0, 0, 0, 0, 0, 0, 1, 4, 3, 2, 24, 24, 24, 24, 24];
+    player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 0, 0, 0, 0], ograce: 0.3}};
   }
-  S.ugrace = player.p.ugrace;
+  
   for (let i = 1; i <= 12; i++) {
     let probability = get_probability(item, item_def, i);
     total_odds *= probability;
