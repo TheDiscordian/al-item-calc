@@ -27,6 +27,7 @@ function calculate_item_grade(def,item) {
 
 function get_item_def(itemid) {
   let item_def = item_upgrades[itemid] || item_compounds[itemid];
+  if (!item_def) return item_def;
   item_def.igrade = calculate_item_grade(item_def);
   if (!item_def.igrade) {
     item_def.igrace = 1;
@@ -48,7 +49,10 @@ function get_item_value() {
 }
 
 function set_item_value() {
-  document.getElementById("item_value").value = get_item_value();
+  let item_value = get_item_value();
+  if (item_value) {
+    document.getElementById("item_value").value = item_value;
+  }
 }
 
 function get_compound_probability(item, item_def, new_level) {
@@ -129,6 +133,7 @@ function get_compound_scroll_value(item, level) {
 
 function run_numbers(item_id) {
   let item_def = get_item_def(item_id);
+  if (!item_def) return;
   let item_value = parseInt(document.getElementById("item_value").value);
 
   player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};

@@ -9,10 +9,10 @@
 </head>
 
 <body>
-  <input type="text" id="item_id" placeholder="item id" value="helmet" oninput="set_item_value()">
+  <input type="text" id="item_id" placeholder="item id" value="helmet" oninput="set_item_value();run_numbers(document.getElementById('item_id').value);">
   <!-- execute button -->
   <button onclick="run_numbers(document.getElementById('item_id').value)">execute</button><br>
-  <input type="number" id="item_value" placeholder="item value" value=3200>
+  <input type="number" id="item_value" placeholder="item value" oninput="run_numbers(document.getElementById('item_id').value);" value=3200>
   Lucky? <input type="checkbox" id="lucky_check" checked>
   <br><br>
   <div id="output" style="font-family:monospace;"></div>
