@@ -26,7 +26,7 @@ function calculate_item_grade(def,item) {
 //item.grace = 1;
 
 function get_item_def(itemid) {
-  let item_def = item_upgrades[itemid];
+  let item_def = item_upgrades[itemid] || item_compounds[itemid];
   item_def.igrade = calculate_item_grade(item_def);
   if (!item_def.igrade) {
     item_def.igrace = 1;
@@ -40,7 +40,7 @@ function get_item_def(itemid) {
 
 function get_item_value() {
   let item_id = document.getElementById("item_id").value;
-  let item_def = item_upgrades[item_id];
+  let item_def = item_upgrades[item_id] || item_compounds[item_id];
   if (!item_def) {
     return;
   }
@@ -51,9 +51,34 @@ function set_item_value() {
   document.getElementById("item_value").value = get_item_value();
 }
 
-function get_probability(item, item_def, new_level) {
-  oprobability = probability = upgrades[item_def.igrade][new_level];
-  grace = Math.max(0, 
+function get_compound_probability(item, item_def, new_level) {
+  let oprobability = probability = compounds[item_def.igrade][new_level];
+  let grace = 0;
+  let proc = 0;
+
+  if (offering) {
+
+  } else {
+    grace = 0.007 * (/*(item0.grace || 0) + (item1.grace || 0) + (item2.grace || 0) + */player.p.ograce);
+    probability = probability + Math.min(25 * 0.007, grace) / Math.max(new_level - 2, 1);
+  }
+
+  if (item_def.type == "booster") {
+      probability = 0.9999999999999;
+      proc = offering && 0.12; // FIXME offering not implemented yet
+    } else {
+      probability = Math.min(
+        probability,
+        Math.min(oprobability * (3 + ((high && high * 0.6) || 0)), oprobability + 0.2 + ((high && high * 0.05) || 0)),
+      );
+    }
+
+    return probability;
+}
+
+function get_upgrade_probability(item, item_def, new_level) {
+  let oprobability = probability = upgrades[item_def.igrade][new_level];
+  let grace = Math.max(0, 
       Math.min(new_level + 1, (item.grace || 0) + Math.min(3, player.p.ugrace[new_level] / 4.5) + item_def.igrace) +
       Math.min(6, S.ugrace[new_level] / 3.0) +
       player.p.ograce / 3.2,
@@ -92,27 +117,68 @@ function get_upgrade_scroll_value(item, level) {
   return [1000, 40000, 1600000, 48000000, 640000000][grade];
 }
 
+function get_compound_scroll_value(item, level) {
+  let grade = 0;
+  for (let i = 0; i < item.grades.length; i++) {
+    if (level >= item.grades[i]) {
+      grade++;  
+    }
+  }
+  return [6400, 240000, 9200000, 92000000][grade];
+}
+
 function run_numbers(item_id) {
   let item_def = get_item_def(item_id);
-  let item = item_def;
-  let output = "";
-  let total_odds = 1;
   let item_value = parseInt(document.getElementById("item_value").value);
-  let total_value = item_value;
+
   player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ograce: 0}};
   S.ugrace = player.p.ugrace;
   if (document.getElementById("lucky_check").checked) {
-    //player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0}};
     S.ugrace = [0, 0, 0, 0, 1, 1, 2, 4, 3, 2, 24, 24, 24, 24, 24];
     player = {p: {ugrace: [0, 0, 0, 0, 1, 1, 2, 4, 3, 2, 0, 0, 0, 0, 0], ograce: 0.3}};
   }
-  
+
+  if (item_def["upgrade"]) {
+    run_upgrade_numbers(item_def, item_value);
+  } else {
+    run_compound_numbers(item_def, item_value);
+  }
+}
+
+function run_upgrade_numbers(item_def, item_value) {
+  let item = item_def;
+  let output = "";
+  let total_odds = 1;
+  let total_value = item_value;
+
   for (let i = 1; i <= 12; i++) {
-    let probability = get_probability(item, item_def, i);
+    let probability = get_upgrade_probability(item, item_def, i);
     total_odds *= probability;
     //item_value += get_upgrade_scroll_value(item, i-1);
     total_value += get_upgrade_scroll_value(item, i-1);
     total_value /= probability;
+    if (i < 10) {
+      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
+    } else {
+      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(6)}%)<br>`;
+    }
+  }
+  document.getElementById("output").innerHTML = output;
+}
+
+function run_compound_numbers(item_def, item_value) {
+  let item = item_def;
+  let output = "";
+  let total_odds = 1;
+  let total_value = item_value;
+
+  for (let i = 1; i <= 7; i++) {
+    let probability = get_compound_probability(item, item_def, i);
+    total_odds *= probability;
+    //item_value += get_compound_scroll_value(item, i-1);
+    total_value /= probability/3;
+    total_value += get_compound_scroll_value(item, i-1)/probability;
+    
     if (i < 10) {
       output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
     } else {

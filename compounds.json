@@ -1,0 +1,1519 @@
+item_compounds = JSON.parse(`{
+  "intearring": {
+    "name": "Earring of Intelligence", 
+    "g": 38000, 
+    "int": 3, 
+    "skin": "intearring", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "int": 2
+    }, 
+    "type": "earring"
+  }, 
+  "dexamulet": {
+    "dex": 4, 
+    "name": "Amulet of Dexterity", 
+    "g": 30000, 
+    "skin": "dexamulet", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "dex": 3
+    }, 
+    "type": "amulet"
+  }, 
+  "skullamulet": {
+    "a": true, 
+    "int": 1, 
+    "hp": 200, 
+    "compound": {
+      "dex": 1, 
+      "for": 1, 
+      "armor": 5, 
+      "hp": 320, 
+      "int": 1, 
+      "str": 1
+    }, 
+    "g": 30000, 
+    "grades": [
+      2, 
+      4, 
+      6, 
+      7
+    ], 
+    "skin": "skullamulet", 
+    "dex": 1, 
+    "name": "Skull Amulet", 
+    "for": 4, 
+    "armor": 10, 
+    "str": 1, 
+    "type": "amulet"
+  }, 
+  "resistancering": {
+    "a": true, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "name": "Ring of Resistance", 
+    "g": 180000, 
+    "skin": "resistancering", 
+    "compound": {
+      "resistance": 9, 
+      "reflection": 0.125
+    }, 
+    "type": "ring", 
+    "resistance": 24
+  }, 
+  "vitring": {
+    "name": "Ring of Vitality", 
+    "g": 24000, 
+    "skin": "vitring", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "vit": 2, 
+    "compound": {
+      "vit": 2
+    }, 
+    "type": "ring"
+  }, 
+  "armorring": {
+    "a": true, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "name": "Ring of Armor", 
+    "g": 180000, 
+    "skin": "armorring", 
+    "armor": 24, 
+    "compound": {
+      "armor": 9, 
+      "dreturn": 0.25
+    }, 
+    "type": "ring"
+  }, 
+  "ringsj": {
+    "dex": 1, 
+    "g": 24000, 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "name": "Ring of Small Joys", 
+    "str": 1, 
+    "skin": "ring", 
+    "int": 1, 
+    "compound": {
+      "int": 1, 
+      "dex": 1, 
+      "resistance": 5, 
+      "str": 1
+    }, 
+    "type": "ring", 
+    "resistance": 5
+  }, 
+  "strring": {
+    "name": "Ring of Strength", 
+    "g": 24000, 
+    "skin": "strring", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "str": 2, 
+    "compound": {
+      "str": 2
+    }, 
+    "type": "ring"
+  }, 
+  "talkingskull": {
+    "a": true, 
+    "grades": [
+      1, 
+      2, 
+      6, 
+      7
+    ], 
+    "name": "Yorick the Talking Skull", 
+    "g": 96000, 
+    "skin": "talkingskull", 
+    "xp": 5, 
+    "compound": {
+      "xp": 5
+    }, 
+    "type": "orb", 
+    "explanation": "Endless wisdom"
+  }, 
+  "darktristone": {
+    "dex": 1, 
+    "evasion": 3, 
+    "vit": 1, 
+    "rpiercing": 5, 
+    "onclick": "socket.emit('activate',{slot:$(this).data('id')})", 
+    "int": 1, 
+    "compound": {
+      "dex": 1, 
+      "vit": 1, 
+      "rpiercing": 5, 
+      "int": 1, 
+      "apiercing": 5, 
+      "str": 1
+    }, 
+    "apiercing": 5, 
+    "ignore": true, 
+    "g": 50000, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "skin_a": "darktristone_a", 
+    "str": 1, 
+    "skin": "darktristone", 
+    "action": "ACTIVATE!", 
+    "type": "ring", 
+    "name": "Legacy Dark Tri-Stone"
+  }, 
+  "lostearring": {
+    "explanation": "Looks valuable", 
+    "compound": {}, 
+    "grades": [
+      0, 
+      2, 
+      10, 
+      12
+    ], 
+    "quest": "lostearring", 
+    "skin": "lostearring", 
+    "a": true, 
+    "e": 1, 
+    "name": "Gold Earring", 
+    "g": 360000, 
+    "edge": -2, 
+    "type": "earring"
+  }, 
+  "stramulet": {
+    "name": "Amulet of Strength", 
+    "g": 30000, 
+    "skin": "stramulet", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "str": 4, 
+    "compound": {
+      "str": 2
+    }, 
+    "type": "amulet"
+  }, 
+  "wbookhs": {
+    "set": "holidays", 
+    "compound": {
+      "dex": 6, 
+      "resistance": 30, 
+      "vit": 6
+    }, 
+    "resistance": 120, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "cx": {
+      "scale": 0.5, 
+      "extension": true
+    }, 
+    "vit": 16, 
+    "skin": "wbookhs", 
+    "tier": 2, 
+    "dex": 16, 
+    "name": "Book of Cheer", 
+    "g": 960000, 
+    "type": "source"
+  }, 
+  "northstar": {
+    "a": true, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "The North Star", 
+    "g": 64000000, 
+    "skin": "northstar", 
+    "xp": 10, 
+    "compound": {
+      "xp": 5
+    }, 
+    "type": "amulet"
+  }, 
+  "bfangamulet": {
+    "a": true, 
+    "g": 6400000, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Ghastly Bat Fang", 
+    "lifesteal": 2, 
+    "skin": "bfangamulet", 
+    "compound": {
+      "critdamage": 4, 
+      "lifesteal": 1, 
+      "apiercing": 20
+    }, 
+    "type": "amulet", 
+    "critdamage": 4, 
+    "apiercing": 20
+  }, 
+  "cdarktristone": {
+    "int": 1, 
+    "compound": {
+      "dex": 1, 
+      "vit": 1, 
+      "rpiercing": 5, 
+      "int": 1, 
+      "apiercing": 5, 
+      "str": 1
+    }, 
+    "g": 50000, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "vit": 1, 
+    "skin": "darktristone", 
+    "name": "Dark Tri-Stone", 
+    "dex": 1, 
+    "rpiercing": 5, 
+    "evasion": 3, 
+    "apiercing": 5, 
+    "str": 1, 
+    "type": "ring"
+  }, 
+  "santasbelt": {
+    "dex": 3, 
+    "a": true, 
+    "grades": [
+      0, 
+      3, 
+      6, 
+      7
+    ], 
+    "set": "holidays", 
+    "g": 640000, 
+    "name": "Santa's Belt", 
+    "evasion": 4, 
+    "skin": "santasbelt", 
+    "compound": {
+      "dex": 2
+    }, 
+    "type": "belt"
+  }, 
+  "rabbitsfoot": {
+    "a": true, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Rabbit's Foot", 
+    "g": 120000, 
+    "skin": "rabbitsfoot", 
+    "explanation": "Taken from a rabbit who lived a long and happy life, after the natural death occurred, with pre-consent", 
+    "compound": {
+      "luck": 5
+    }, 
+    "type": "orb", 
+    "luck": 10
+  }, 
+  "exoarm": {
+    "int": 20, 
+    "explanation": "It does more than just enhance your natural movements, almost like has a mind of it's own", 
+    "compound": {
+      "int": 6, 
+      "str": 6
+    }, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "cx": {}, 
+    "skin": "exoarm", 
+    "tier": 3, 
+    "name": "Exoskeletal Arm", 
+    "g": 48000000, 
+    "armor": 80, 
+    "str": 24, 
+    "type": "misc_offhand"
+  }, 
+  "mbelt": {
+    "a": true, 
+    "int": 8, 
+    "compound": {
+      "armor": 10, 
+      "speed": 1.1
+    }, 
+    "grades": [
+      0, 
+      1, 
+      6, 
+      7
+    ], 
+    "skin": "mbelt", 
+    "speed": 1, 
+    "dex": 8, 
+    "name": "Well-Crafted Belt", 
+    "g": 640000, 
+    "armor": 15, 
+    "type": "belt"
+  }, 
+  "ringofluck": {
+    "a": true, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Ring of Luck", 
+    "g": 6400000, 
+    "skin": "ringofluck", 
+    "compound": {
+      "luck": 5
+    }, 
+    "type": "ring", 
+    "luck": 10
+  }, 
+  "trigger": {
+    "a": true, 
+    "g": 6400000, 
+    "grades": [
+      0, 
+      0, 
+      1, 
+      3
+    ], 
+    "name": "The Trigger", 
+    "str": 6, 
+    "skin": "trigger", 
+    "stun": 1.5, 
+    "compound": {
+      "stun": 0.75, 
+      "apiercing": 2, 
+      "str": 2
+    }, 
+    "type": "ring", 
+    "apiercing": 10
+  }, 
+  "strearring": {
+    "name": "Earring of Strength", 
+    "g": 38000, 
+    "skin": "strearring", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "str": 3, 
+    "compound": {
+      "str": 2
+    }, 
+    "type": "earring"
+  }, 
+  "sanguine": {
+    "int": 5, 
+    "hp": 1200, 
+    "compound": {
+      "int": 1, 
+      "dex": 1, 
+      "hp": 300, 
+      "str": 1, 
+      "attr0": 0.5
+    }, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "attr0": 1, 
+    "skin": "sanguine", 
+    "dex": 5, 
+    "name": "Sanguine Amulet", 
+    "g": 32000000, 
+    "aura": "sanguine", 
+    "str": 5, 
+    "type": "amulet"
+  }, 
+  "orbofstr": {
+    "g": 240000, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Orb of Strength", 
+    "str": 4, 
+    "skin": "orbofstr", 
+    "compound": {
+      "str": 3
+    }, 
+    "type": "orb"
+  }, 
+  "orbg": {
+    "dex": 2, 
+    "g": 60000, 
+    "grades": [
+      4, 
+      6, 
+      6, 
+      7
+    ], 
+    "name": "Orb of Beginnings", 
+    "str": 2, 
+    "skin": "orbg", 
+    "int": 2, 
+    "compound": {
+      "int": 1, 
+      "dex": 1, 
+      "str": 1
+    }, 
+    "type": "orb"
+  }, 
+  "amuletofm": {
+    "dex": 3, 
+    "dreturn": 1, 
+    "reflection": 0.5, 
+    "evasion": 2, 
+    "int": 6, 
+    "hp": 400, 
+    "compound": {
+      "dex": 1, 
+      "dreturn": 0.75, 
+      "int": 1, 
+      "str": 1, 
+      "evasion": 2, 
+      "crit": 1, 
+      "hp": 120, 
+      "armor": 2
+    }, 
+    "name": "Amulet of Mystery", 
+    "armor": 10, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "g": 6400000, 
+    "a": true, 
+    "str": 4, 
+    "skin": "amuletofm", 
+    "crit": 2, 
+    "type": "amulet", 
+    "manasteal": 0.5
+  }, 
+  "orbofint": {
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Orb of Intelligence", 
+    "g": 240000, 
+    "skin": "orbofint", 
+    "int": 4, 
+    "compound": {
+      "int": 3
+    }, 
+    "type": "orb"
+  }, 
+  "mpxbelt": {
+    "mp_cost": -5, 
+    "set": "mpx", 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Belt of MP Reduction", 
+    "g": 1200000, 
+    "skin": "mpxbelt", 
+    "compound": {
+      "mp_cost": -1, 
+      "mp_reduction": 5
+    }, 
+    "type": "belt", 
+    "mp_reduction": 10
+  }, 
+  "tigerstone": {
+    "set": "tiger", 
+    "int": 1, 
+    "compound": {
+      "int": 0.5, 
+      "dex": 1, 
+      "str": 1, 
+      "vit": 4
+    }, 
+    "grades": [
+      0, 
+      1, 
+      6, 
+      7
+    ], 
+    "vit": 10, 
+    "skin": "tigerstone", 
+    "speed": 1, 
+    "dex": 2, 
+    "name": "Tiger Stone", 
+    "g": 600000, 
+    "armor": 30, 
+    "str": 2, 
+    "type": "orb"
+  }, 
+  "goldbooster": {
+    "gold": 20, 
+    "explanation": "Boosts gold loot from chests.", 
+    "compound": {
+      "gold": 8
+    }, 
+    "cash": 250, 
+    "grades": [
+      0, 
+      10, 
+      6, 
+      7
+    ], 
+    "legacy": {
+      "gold": 10
+    }, 
+    "skin_a": "goldbooster_a", 
+    "skin": "goldbooster", 
+    "name": "Gold Booster", 
+    "days": 30, 
+    "type": "booster", 
+    "gain": "gold"
+  }, 
+  "vring": {
+    "dreturn": 9, 
+    "set": "vampires", 
+    "pnresistance": 4, 
+    "compound": {
+      "str": 4
+    }, 
+    "g": 4200000, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "courage": 1, 
+    "vit": 6, 
+    "skin": "vring", 
+    "a": true, 
+    "name": "Vampiring", 
+    "lifesteal": 6, 
+    "armor": 10, 
+    "str": 12, 
+    "type": "ring"
+  }, 
+  "goldring": {
+    "a": true, 
+    "g": 28000000, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "name": "Ring of Gold", 
+    "gold": 4, 
+    "skin": "goldenring", 
+    "compound": {
+      "gold": 2
+    }, 
+    "type": "ring"
+  }, 
+  "lbelt": {
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "name": "Belt", 
+    "g": 40000, 
+    "skin": "lbelt", 
+    "armor": 15, 
+    "speed": 1, 
+    "explanation": "A belt that can actually hold your pants in place!", 
+    "compound": {
+      "armor": 5, 
+      "speed": 1.1
+    }, 
+    "type": "belt"
+  }, 
+  "sbelt": {
+    "a": true, 
+    "int": 8, 
+    "compound": {
+      "int": 2, 
+      "dex": 2, 
+      "armor": 10, 
+      "resistance": 10, 
+      "str": 2
+    }, 
+    "resistance": 15, 
+    "g": 640000, 
+    "grades": [
+      0, 
+      1, 
+      6, 
+      7
+    ], 
+    "skin": "sbelt", 
+    "dex": 8, 
+    "name": "Belt of Hallowed Trials", 
+    "for": 12, 
+    "armor": 15, 
+    "str": 8, 
+    "type": "belt"
+  }, 
+  "rednose": {
+    "a": true, 
+    "range": 3, 
+    "grades": [
+      2, 
+      4, 
+      6, 
+      7
+    ], 
+    "name": "Rudolph's Red Nose", 
+    "g": 32000, 
+    "skin": "rednose", 
+    "cuteness": 9, 
+    "compound": {
+      "cuteness": 3, 
+      "range": 4
+    }, 
+    "type": "helmet", 
+    "scroll": true
+  }, 
+  "t2intamulet": {
+    "armor": 30, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "edge": -1, 
+    "name": "Amulet of the Fierce Mage", 
+    "g": 160000, 
+    "skin": "t2intamulet", 
+    "int": 5, 
+    "compound": {
+      "int": 2, 
+      "armor": 20
+    }, 
+    "type": "amulet"
+  }, 
+  "test_orb": {
+    "grades": [
+      0, 
+      0, 
+      10, 
+      12
+    ], 
+    "fzresistance": 20, 
+    "name": "Orb of Testing", 
+    "g": 1, 
+    "skin": "test_orb", 
+    "firesistance": 20, 
+    "compound": {}, 
+    "type": "orb"
+  }, 
+  "vitearring": {
+    "name": "Earring of Vitality", 
+    "g": 38000, 
+    "skin": "vitearring", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "vit": 3, 
+    "compound": {
+      "vit": 2
+    }, 
+    "type": "earring"
+  }, 
+  "zapper": {
+    "ability": "zapperzap", 
+    "int": 10, 
+    "compound": {
+      "int": 3, 
+      "rpiercing": 4
+    }, 
+    "resistance": 30, 
+    "grades": [
+      0, 
+      0, 
+      1, 
+      3
+    ], 
+    "skin": "trigger", 
+    "name": "The Zapper", 
+    "a": true, 
+    "rpiercing": 10, 
+    "g": 6400000, 
+    "str": 5, 
+    "type": "ring"
+  }, 
+  "hpamulet": {
+    "name": "Amulet of HP", 
+    "g": 20000, 
+    "hp": 200, 
+    "skin": "hpamulet", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "hp": 240
+    }, 
+    "type": "amulet"
+  }, 
+  "xpbooster": {
+    "explanation": "Increases experience gain. Needs to be activated. Can be shifted into other boosters.", 
+    "compound": {
+      "xp": 12
+    }, 
+    "cash": 250, 
+    "grades": [
+      0, 
+      10, 
+      6, 
+      7
+    ], 
+    "skin_a": "xpbooster_a", 
+    "skin": "xpbooster", 
+    "xp": 20, 
+    "name": "XP Booster", 
+    "days": 30, 
+    "type": "booster", 
+    "gain": "xp"
+  }, 
+  "intbelt": {
+    "name": "Belt of Intelligence", 
+    "g": 50000, 
+    "int": 4, 
+    "skin": "intbelt", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "int": 3
+    }, 
+    "type": "belt"
+  }, 
+  "t2dexamulet": {
+    "dex": 6, 
+    "g": 160000, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "edge": -1, 
+    "name": "Amulet of the Stubborn Ranger", 
+    "vit": 5, 
+    "skin": "t2dexamulet", 
+    "compound": {
+      "dex": 3, 
+      "vit": 3
+    }, 
+    "type": "amulet"
+  }, 
+  "orbofsc": {
+    "a": true, 
+    "set": "holidays", 
+    "attr0": 1, 
+    "int": 2, 
+    "compound": {
+      "dex": 1, 
+      "vit": 1, 
+      "int": 2, 
+      "mp": 100, 
+      "str": 1, 
+      "attr0": 1
+    }, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "vit": 2, 
+    "skin": "orbofsc", 
+    "ability": "secondchance", 
+    "dex": 2, 
+    "name": "Orb of Second Chances", 
+    "g": 120000, 
+    "mp": 200, 
+    "str": 2, 
+    "type": "orb"
+  }, 
+  "wbook0": {
+    "int": 6, 
+    "grades": [
+      4, 
+      5, 
+      6, 
+      7
+    ], 
+    "cx": {
+      "scale": 0.5, 
+      "extension": true
+    }, 
+    "name": "Book of Knowledge", 
+    "g": 12000, 
+    "skin": "wbook0", 
+    "tier": 1, 
+    "compound": {
+      "int": 5
+    }, 
+    "type": "source"
+  }, 
+  "wbook1": {
+    "int": 16, 
+    "compound": {
+      "int": 5, 
+      "reflection": 1, 
+      "vit": 2
+    }, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "cx": {
+      "scale": 0.5, 
+      "extension": true
+    }, 
+    "vit": 6, 
+    "skin": "wbook1", 
+    "tier": 2, 
+    "name": "Book of Secrets", 
+    "reflection": 2, 
+    "g": 960000, 
+    "type": "source"
+  }, 
+  "suckerpunch": {
+    "set": "fury", 
+    "compound": {
+      "crit": 1, 
+      "apiercing": 20, 
+      "lifesteal": 1
+    }, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "lifesteal": 2, 
+    "skin": "suckerpunch", 
+    "crit": 2, 
+    "a": true, 
+    "name": "Sucker Punch", 
+    "g": 3200000, 
+    "apiercing": 20, 
+    "type": "ring"
+  }, 
+  "dexbelt": {
+    "dex": 4, 
+    "name": "Belt of Dexterity", 
+    "g": 50000, 
+    "skin": "dexbelt", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "dex": 3
+    }, 
+    "type": "belt"
+  }, 
+  "hpbelt": {
+    "name": "Belt of HP", 
+    "g": 20000, 
+    "hp": 160, 
+    "skin": "hpbelt", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "hp": 240
+    }, 
+    "type": "belt"
+  }, 
+  "ftrinket": {
+    "a": true, 
+    "int": 2, 
+    "explanation": "Good things come to those who wait", 
+    "compound": {
+      "armor": 5, 
+      "speed": 1, 
+      "vit": 3
+    }, 
+    "grades": [
+      1, 
+      3, 
+      6, 
+      7
+    ], 
+    "vit": 2, 
+    "skin": "ftrinket", 
+    "speed": 0.5, 
+    "dex": 2, 
+    "name": "Trinket of Faith", 
+    "g": 96000, 
+    "armor": 5, 
+    "str": 2, 
+    "type": "orb"
+  }, 
+  "jacko": {
+    "a": true, 
+    "g": 96000, 
+    "grades": [
+      2, 
+      4, 
+      6, 
+      7
+    ], 
+    "cx": {
+      "scale": 0.5
+    }, 
+    "name": "Jack-o Lantern", 
+    "rpiercing": 20, 
+    "skin": "jacko", 
+    "compound": {
+      "rpiercing": 15
+    }, 
+    "type": "orb", 
+    "ability": "scare"
+  }, 
+  "t2stramulet": {
+    "g": 160000, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "edge": -1, 
+    "name": "Amulet of the Eager Warrior", 
+    "str": 5, 
+    "skin": "t2stramulet", 
+    "compound": {
+      "resistance": 20, 
+      "str": 3
+    }, 
+    "type": "amulet", 
+    "resistance": 30
+  }, 
+  "orbofdex": {
+    "dex": 4, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Orb of Dexterity", 
+    "g": 240000, 
+    "skin": "orbofdex", 
+    "compound": {
+      "dex": 3
+    }, 
+    "type": "orb"
+  }, 
+  "intamulet": {
+    "name": "Amulet of Intelligence", 
+    "g": 30000, 
+    "int": 4, 
+    "skin": "intamulet", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "int": 3
+    }, 
+    "type": "amulet"
+  }, 
+  "snring": {
+    "dex": 2, 
+    "g": 2400000, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Stompy's Nose Ring", 
+    "str": 14, 
+    "skin": "snring", 
+    "armor": 20, 
+    "compound": {
+      "dex": 1, 
+      "armor": 5, 
+      "str": 2
+    }, 
+    "type": "amulet"
+  }, 
+  "molesteeth": {
+    "a": true, 
+    "grades": [
+      0, 
+      1, 
+      6, 
+      7
+    ], 
+    "name": "Mole's Teeth", 
+    "g": 500000, 
+    "skin": "molesteeth", 
+    "compound": {
+      "apiercing": 15
+    }, 
+    "type": "earring", 
+    "apiercing": 15
+  }, 
+  "mearring": {
+    "a": true, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "set": "holidays", 
+    "name": "Mistletoe Earring", 
+    "g": 12000000, 
+    "skin": "mearring", 
+    "compound": {
+      "luck": 1
+    }, 
+    "type": "earring", 
+    "luck": 8
+  }, 
+  "ringhs": {
+    "a": true, 
+    "set": "holidays", 
+    "ability": "secondchance", 
+    "int": 4, 
+    "compound": {
+      "vit": 5, 
+      "luck": 3
+    }, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "attr0": 3, 
+    "skin": "ringhs", 
+    "dex": 4, 
+    "vit": 10, 
+    "name": "Ring of Holidays", 
+    "g": 6400000, 
+    "str": 4, 
+    "type": "ring", 
+    "luck": 8
+  }, 
+  "mpxamulet": {
+    "a": true, 
+    "mp_cost": -5, 
+    "set": "mpx", 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "name": "Amulet of MP", 
+    "g": 56000000, 
+    "skin": "mpxamulet", 
+    "compound": {
+      "mp_cost": -2, 
+      "mp_reduction": 2
+    }, 
+    "type": "amulet", 
+    "mp_reduction": 12
+  }, 
+  "tristone": {
+    "dex": 1, 
+    "vit": 1, 
+    "rpiercing": 5, 
+    "onclick": "socket.emit('activate',{slot:$(this).data('id')})", 
+    "int": 1, 
+    "compound": {
+      "dex": 1, 
+      "vit": 1, 
+      "rpiercing": 5, 
+      "int": 1, 
+      "apiercing": 5, 
+      "str": 1
+    }, 
+    "apiercing": 5, 
+    "ignore": true, 
+    "g": 50000, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "skin_a": "tristone_a", 
+    "str": 1, 
+    "skin": "tristone", 
+    "action": "ACTIVATE!", 
+    "type": "ring", 
+    "name": "Legacy Tri-Stone"
+  }, 
+  "orbofvit": {
+    "g": 240000, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Orb of Vitality", 
+    "vit": 10, 
+    "skin": "orbofvit", 
+    "compound": {
+      "vit": 4
+    }, 
+    "type": "orb"
+  }, 
+  "luckbooster": {
+    "explanation": "Increases your chances of looting something from a monster.", 
+    "compound": {
+      "luck": 8
+    }, 
+    "cash": 250, 
+    "grades": [
+      0, 
+      10, 
+      6, 
+      7
+    ], 
+    "legacy": {
+      "luck": 15
+    }, 
+    "skin_a": "luckbooster_a", 
+    "skin": "luckbooster", 
+    "name": "Luck Booster", 
+    "days": 30, 
+    "gain": "luck", 
+    "type": "booster", 
+    "luck": 20
+  }, 
+  "strbelt": {
+    "name": "Belt of Strength", 
+    "g": 50000, 
+    "skin": "strbelt", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "str": 4, 
+    "compound": {
+      "str": 3
+    }, 
+    "type": "belt"
+  }, 
+  "cring": {
+    "dex": 4, 
+    "grades": [
+      0, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Ring of The Crypt", 
+    "g": 240000, 
+    "skin": "cring", 
+    "int": 4, 
+    "compound": {
+      "dex": 2, 
+      "int": 2
+    }, 
+    "type": "ring"
+  }, 
+  "coal": {
+    "a": true, 
+    "name": "Coal", 
+    "g": 10, 
+    "explanation": "...", 
+    "compound": {}, 
+    "skin": "coal", 
+    "type": "misc"
+  }, 
+  "dexring": {
+    "dex": 2, 
+    "name": "Ring of Dexterity", 
+    "g": 24000, 
+    "skin": "dexring", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "dex": 2
+    }, 
+    "type": "ring"
+  }, 
+  "vorb": {
+    "courage": 1, 
+    "set": "vampires", 
+    "name": "Vampiric Canine Teeth", 
+    "g": 12000000, 
+    "skin": "vorb", 
+    "pcourage": 1, 
+    "compound": {
+      "courage": 1
+    }, 
+    "type": "orb", 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ]
+  }, 
+  "solitaire": {
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "bling": 10, 
+    "name": "Solitaire Ring", 
+    "g": 1200000, 
+    "skin": "solitaire", 
+    "explanation": "The diamond is mesmerizing", 
+    "compound": {
+      "bling": 30
+    }, 
+    "type": "ring", 
+    "event": true
+  }, 
+  "charmer": {
+    "attr0": 1, 
+    "grades": [
+      0, 
+      3, 
+      6, 
+      7
+    ], 
+    "g": 120000, 
+    "name": "Charmer", 
+    "vit": 10, 
+    "skin": "charmer", 
+    "compound": {
+      "attr0": 1, 
+      "vit": 10
+    }, 
+    "type": "orb", 
+    "event": true, 
+    "ability": "charm"
+  }, 
+  "dexearring": {
+    "dex": 3, 
+    "name": "Earring of Dexterity", 
+    "g": 38000, 
+    "skin": "dexearring", 
+    "grades": [
+      2, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "dex": 2
+    }, 
+    "type": "earring"
+  }, 
+  "intring": {
+    "name": "Ring of Intelligence", 
+    "g": 24000, 
+    "int": 2, 
+    "skin": "intring", 
+    "grades": [
+      3, 
+      5, 
+      6, 
+      7
+    ], 
+    "compound": {
+      "int": 2
+    }, 
+    "type": "ring"
+  }, 
+  "cearring": {
+    "g": 380000, 
+    "grades": [
+      0, 
+      4, 
+      6, 
+      7
+    ], 
+    "edge": -2, 
+    "name": "Earring of The Crypt", 
+    "str": 5, 
+    "skin": "cearring", 
+    "int": 5, 
+    "compound": {
+      "int": 2, 
+      "str": 2
+    }, 
+    "type": "earring"
+  }, 
+  "dexearringx": {
+    "dex": 6, 
+    "grades": [
+      0, 
+      2, 
+      6, 
+      7
+    ], 
+    "name": "Enchanted Earring", 
+    "g": 38000, 
+    "skin": "dexearringx", 
+    "speed": 1, 
+    "compound": {
+      "dex": 2, 
+      "luck": 2
+    }, 
+    "type": "earring", 
+    "luck": 2
+  }, 
+  "ctristone": {
+    "int": 1, 
+    "compound": {
+      "dex": 1, 
+      "vit": 1, 
+      "rpiercing": 5, 
+      "int": 1, 
+      "apiercing": 5, 
+      "str": 1
+    }, 
+    "grades": [
+      1, 
+      4, 
+      6, 
+      7
+    ], 
+    "vit": 1, 
+    "skin": "tristone", 
+    "name": "Tri-Stone", 
+    "dex": 1, 
+    "rpiercing": 5, 
+    "g": 50000, 
+    "apiercing": 5, 
+    "str": 1, 
+    "type": "ring"
+  }, 
+  "lantern": {
+    "compound": {
+      "resistance": 10, 
+      "evasion": 5
+    }, 
+    "explanation": "Forged from a naturally vibrating metal", 
+    "skin": "lantern", 
+    "resistance": 120, 
+    "grades": [
+      0, 
+      0, 
+      6, 
+      7
+    ], 
+    "cx": {
+      "scale": 0.5
+    }, 
+    "evasion": 10, 
+    "tier": 3, 
+    "name": "The Lantern", 
+    "g": 480000, 
+    "type": "misc_offhand"
+  }
+}`);
