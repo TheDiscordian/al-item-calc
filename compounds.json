@@ -618,7 +618,6 @@ item_compounds = JSON.parse(`{
     "compound": {
       "gold": 8
     }, 
-    "cash": 250, 
     "grades": [
       0, 
       10, 
@@ -631,6 +630,7 @@ item_compounds = JSON.parse(`{
     "skin_a": "goldbooster_a", 
     "skin": "goldbooster", 
     "name": "Gold Booster", 
+    "g": 79840000, 
     "days": 30, 
     "type": "booster", 
     "gain": "gold"
@@ -834,7 +834,6 @@ item_compounds = JSON.parse(`{
     "compound": {
       "xp": 12
     }, 
-    "cash": 250, 
     "grades": [
       0, 
       10, 
@@ -845,6 +844,7 @@ item_compounds = JSON.parse(`{
     "skin": "xpbooster", 
     "xp": 20, 
     "name": "XP Booster", 
+    "g": 79840000, 
     "days": 30, 
     "type": "booster", 
     "gain": "xp"
@@ -1263,7 +1263,6 @@ item_compounds = JSON.parse(`{
     "compound": {
       "luck": 8
     }, 
-    "cash": 250, 
     "grades": [
       0, 
       10, 
@@ -1276,6 +1275,7 @@ item_compounds = JSON.parse(`{
     "skin_a": "luckbooster_a", 
     "skin": "luckbooster", 
     "name": "Luck Booster", 
+    "g": 79840000, 
     "days": 30, 
     "gain": "luck", 
     "type": "booster", 

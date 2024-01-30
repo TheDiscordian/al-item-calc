@@ -1780,7 +1780,7 @@ item_upgrades = JSON.parse(`{
       "evasion": 1
     }, 
     "evasion": 5, 
-    "g": 120000, 
+    "g": 128, 
     "wtype": "staff", 
     "attack": 15, 
     "range": 44, 
