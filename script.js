@@ -103,8 +103,8 @@ function run_numbers(item_id) {
   S.ugrace = player.p.ugrace;
   if (document.getElementById("lucky_check").checked) {
     //player = {p: {ugrace: [0, 0, 1, 1, 2, 2, 3, 8, 24, 24, 24, 24, 24, 24, 24], ograce: 0}};
-    S.ugrace = [0, 0, 0, 0, 0, 0, 1, 4, 3, 2, 24, 24, 24, 24, 24];
-    player = {p: {ugrace: [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 0, 0, 0, 0], ograce: 0.3}};
+    S.ugrace = [0, 0, 0, 0, 1, 1, 2, 4, 3, 2, 24, 24, 24, 24, 24];
+    player = {p: {ugrace: [0, 0, 0, 0, 1, 1, 2, 4, 3, 2, 0, 0, 0, 0, 0], ograce: 0.3}};
   }
   
   for (let i = 1; i <= 12; i++) {
