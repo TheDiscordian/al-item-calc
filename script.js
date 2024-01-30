@@ -178,12 +178,8 @@ function run_compound_numbers(item_def, item_value) {
     //item_value += get_compound_scroll_value(item, i-1);
     total_value /= probability/3;
     total_value += get_compound_scroll_value(item, i-1)/probability;
-    
-    if (i < 10) {
-      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
-    } else {
-      output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(6)}%)<br>`;
-    }
+
+    output += `Level ${i}:  ${(probability*100).toFixed(2)}% (${parseInt(total_value).toLocaleString()}g) (odds total: ${(total_odds*100).toFixed(3)}%)<br>`;
   }
   document.getElementById("output").innerHTML = output;
 }
